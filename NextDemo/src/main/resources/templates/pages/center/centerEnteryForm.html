@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Center</title>
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+
+    <link rel="stylesheet" th:href="@{/css/Chart.min.css}">
+
+    <link rel="stylesheet" th:href="@{/css/perfect-scrollbar.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+     <link rel="shortcut icon" th:href="@{/images/logo.png}" type="image/x-icon">
+     
+     	<style >
+	        .dropdown-submenu {
+            position: relative;
+        }
+    
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+        }
+        table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    table, th, td {
+        border: 1px solid #000;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #FFEBCD;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    td {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4c4e36;
+        color: #FFF;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #555;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+	</style>
+</head>
+
+<body style="background-image: url(@{/images/loginbg1.jpg})">
+		<div id="app"><!--Main content-->
+   		   <span th:replace="fragments/sidebar :: sidebar"></span>
+    	    <div id="main"><!--Content id-->
+            <span th:replace="fragments/header :: header"></span>
+        		<div class="main-content container-fluid" layout:fragment="content"><!--dynamic content-->
+	<div class="row">
+		<form action="/subhlakshmi/test" method="post">
+			<table align="center" border="3" border-color="red">
+            <tr>
+                <td colspan="4" align="center" bgcolor="#FFEBCD">
+                    <font face="arial" size="5"  color="#4c4e36"><b>CENTER ENTRY FORM</b></font>
+                </td>
+            </tr>
+            <tr>
+				<td><font face="arial">Center number</font></td>
+                <td>
+                    <input type="text" th:value="${maxId+1}" readonly style="border: none; text-decoration: none;" >
+                </td>
+			</tr>
+            <tr>
+				<td><font face="arial">Center Name</font></td>
+                <td>
+                    <input type="text" placeholder="Enter Center name" style="border: none; text-decoration: none;" >
+                </td>
+			</tr>
+            
+            <tr>
+                <td><font face="arial">Center Manager</font></td>
+                <td>
+                    <select >
+                    	<option>Rohan</option>
+                    	<option>Mohan</option>
+                    	<option>Mohan</option>
+                    	<option>Mohan</option>
+                    	<option>Mohan</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><font face="arial">Meeting Address</font></td>
+                <td><textarea field="" rows="4" cols="30"></textarea></td>
+            </tr>
+             <tr>
+                <td><font face="arial">Direction:</font></td>
+                <td>
+                    <select>
+                        <option>East</option>
+                        <option>North</option>
+                        <option>West</option>
+                        <option>M=sdnfsdd</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="color: red; font-style: italic;">
+                        DD/MM/YY format only
+                    </div>
+                    <font face="arial">Create Date</font>
+                </td>
+                <td><input type="text" value="2023/07/11" placeholder="DD/MM/YY" id="datepicker"/></td>
+            </tr>
+            <tr>
+                <td><font face="arial">GRT done By</font></td>
+                <td>
+                    <select>
+                        <option>Mohan</option>
+                        <option>Rohan</option>
+                        <option>Sohan</option>
+                        <option>M=sdnfsdd</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><font face="arial">Meeting Day</font></td>
+                <td>
+                    <select>
+                        <option>Sunday</option>
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><font face="arial">Distance From Branch</font></td>
+                <td>
+                    <select>
+                        <option>Mohan</option>
+                        <option>Rohan</option>
+                        <option>Sohan</option>
+                        <option>M=sdnfsdd</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><font face="arial">Meeting Time</font></td>
+                <td>
+                    <select>
+                        <option>Mohan</option>
+                        <option>Rohan</option>
+                        <option>Sohan</option>
+                        <option>M=sdnfsdd</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" value="Mohit" />
+                </td>
+                <td>
+                    <br/><input type="submit" value="Submit"/>
+                </td>
+            </tr>                
+            </table>
+		</form>
+	</div>
+        		<div style="margin-top:3vw">
+               	<span th:replace="fragments/footer :: footer"></span>
+              	</div>
+    		</div>
+	</div>
+</div>
+<script th:src="@{/js/feather.min.js}"></script>
+<script th:src="@{/js/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/apexcharts.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div id="sidebar" class='active' th:fragment="sidebar"><!--sidebar-->
+    <div class="sidebar-wrapper active">
+        <div class="sidebar-header" style="padding: 0px 20px;">
+            <img src="/images/logo_white.png" alt="" srcset="" height="200px" width="200px">
+        </div>
+        <div class="sidebar-menu">
+            <ul class="menu">
+                <li class='sidebar-title'>Main Menu</li>
+                <li class="sidebar-item active ">
+                    <a href="/subhlakshmi/dashboard.spr" class='sidebar-link'>
+                        <i data-feather="home" width="20"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class='sidebar-title'>HR</li>
+                <li class="sidebar-item has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i data-feather="triangle" width="20"></i>
+                        <span>HRMS</span>
+                    </a>
+                    <ul class="submenu">                        
+                         <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>Master Creation </a>
+                            <ul class="submenu">
+                                <li><a href="#">Staff Performance Report</a></li>                                
+                            </ul>
+                        </li>
+                        <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>Manage</a>
+                            <ul class="submenu">
+                                <li><a href="#">Staff Performance Report</a></li>                                
+                            </ul>
+                        </li>
+                         <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>Reports/Search</a>
+                            <ul class="submenu">
+                                <li><a href="#">Staff Performance Report</a></li>                                
+                            </ul>
+                        </li>
+                                               
+                    </ul>
+                </li>
+                <li class='sidebar-title'>Loan Origination</li>
+                <li class="sidebar-item has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i data-feather="dollar-sign" width="20"></i>
+                        <span>Loan Origination</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Loan plan</a></li>
+                        <li><a href="component-extra-avatar.html">Member</a></li>
+                        <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>Center</a>
+                            <ul class="submenu">
+                                <li><a href="#">Center Meeting Date</a></li>
+                                <li><a href="/subhlakshmi/CenterEntry.spr">Create Center</a></li>
+                                <li><a href="#">Create Branch</a></li>
+                                <li><a href="#">Create Groups</a></li>
+                                <li><a href="#">Create Division</a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i data-feather="info" width="20"></i>
+                                <span>Client Details</span>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="#">Customer</a></li>
+                                <li><a href="#">Bank Details</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class='sidebar-title'>MIS</li>
+                <li class="sidebar-item has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i data-feather="monitor" width="20"></i>
+                        <span>MIS</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Branch Transfer</a></li>
+                        <li><a href="#">Remove Deposit Entry</a></li>
+                        <li><a href="#">Remove Transfer Balance Entry</a></li>
+                        <li><a href="#">Repayment Entry</a></li>
+                        <li><a href="#">Remove Payment</a></li>
+                        <li><a href="#">Center Close Entry Form</a></li>
+                        <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>Print Documents</a>
+                            <ul class="submenu">
+                                <li class="sidebar-item has-sub">
+                                    <a href="#" class='sidebar-link'>Pre Disbursement</a>
+                                    <ul class="submenu">
+                                        <li class="sidebar-item has-sub">
+                                            <a href="#" class='sidebar-link'>Sanction letter</a>
+                                            <ul class="submenu">
+                                                <li><a href="#">First Tranche Sanction Letter For SEL</a></li>
+                                                <li><a href="#">First Tranche Sanction Letter For MEL</a></li>
+                                                <li><a href="#">Second Tranche Sanction Letter</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-item has-sub">
+                                    <a href="#" class='sidebar-link'>Post Disbursement</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>Reports</a>
+                            <ul class="submenu">
+                                <li><a href="#">Collection</a></li>
+                                <li><a href="#">Due</a></li>
+                                <li><a href="#">Disbursement Register</a></li>
+                                <li><a href="#">DECR Error</a></li>
+                                <li><a href="#">Arrear</a></li>
+                                <li><a href="#">Field Report</a></li>
+                                <li><a href="#">Master</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class='sidebar-title'>Operation</li>
+                <li class="sidebar-item has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i data-feather="book-open" width="20"></i>
+                        <span>Operation</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Search Client</a></li>
+                        <li><a href="#">Search A/C No.</a></li>
+                        <li><a href="#">Mapped Center</a></li>
+                        <li><a href="#">Unmapped Center</a></li>
+                    </ul>
+                </li>
+
+                <li class='sidebar-title'>Credit</li>
+                <li class="sidebar-item has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i data-feather="credit-card" width="20"></i>
+                        <span>Credit</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Credit Pending</a></li>
+                        <li><a href="#">ReCredit Pending</a></li>
+                        <li><a href="#">Credit Report</a></li>
+                        <li><a href="#">Equifix Data</a></li>
+                        <li><a href="#">GRT Details</a></li>
+                        <li><a href="#">ReCredit Entry</a></li>
+                        <li><a href="#">Delete Credit</a></li>
+                        <li><a href="#">MFI- Equifax Upload</a></li>
+                        <li><a href="#">Retail- Equifax Upload</a></li>
+                        <li><a href="#">Further Action Client Report</a></li>
+                        <li><a href="#">Further Action Resolved Client</a></li>
+                        <li><a href="#">Modify Disbursement</a></li>
+                        <li><a href="#">ReCredit Entry Report</a></li>
+                        <li><a href="#">Daily Enrollment Entry Report</a></li>
+                        <li><a href="#">Cam</a></li>
+                    </ul>
+                </li>
+
+                <!-- Accounts -->
+                <li class='sidebar-title'>Accounts</li>
+                <li class="sidebar-item has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i data-feather="package" width="20"></i>
+                        <span>Account</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="auth-login.html">Deposit</a></li>
+                        <li><a href="auth-login.html">Collection</a></li>
+                        <li><a href="auth-login.html">Disbursement</a></li>
+                    </ul>
+                </li>
+
+                <li class='sidebar-title'>Authentication and authorization</li>
+                <li class="sidebar-item has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i data-feather="user" width="20"></i>
+                        <span>Authentication</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="auth-login.html">Login</a></li>
+                        <li><a href="auth-register.html">Register</a></li>
+                        <li><a href="auth-forgot-password.html">Forgot Password</a></li>
+                    </ul>
+                </li>
+
+                <li class='sidebar-title'>Tracking</li>
+                <li class="sidebar-item has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i data-feather="shield-off" width="20"></i>
+                        <span>Authorization</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+    </div>
+</div>
+</body>
+</html>

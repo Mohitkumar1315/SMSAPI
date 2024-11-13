@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Center</title>
+ 
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+
+    <link rel="stylesheet" th:href="@{/css/Chart.min.css}">
+
+    <link rel="stylesheet" th:href="@{/css/perfect-scrollbar.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+     <link rel="shortcut icon" th:href="@{/images/logo.png}" type="image/x-icon">
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Define the URL endpoint
+        const url = "http://localhost:8084/center/getBranch";
+        
+        // Fetch the data from the endpoint
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                // Get the select element
+                const branchSelect = document.getElementById("branchSelect");
+
+                // Loop through the data and create option elements
+                data.forEach(branch => {
+                    const option = document.createElement("option");
+                    option.value = branch.branchId;  // Set the value to branchId
+                    option.textContent = branch.branchName;  // Set the text to branchName
+                    branchSelect.appendChild(option);  // Add the option to the select element
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    });
+
+     function updateBranchName() 
+     {
+    const branchSelect = document.getElementById("branchSelect");
+    const branchName = branchSelect.options[branchSelect.selectedIndex].text;
+    document.getElementById("branchName").value = branchName;
+    console.log("Branch Name Set to:", branchName); // Debugging line
+    
+}
+    </script>
+
+</head>
+
+<body style="background-image: url(@{/images/loginbg1.jpg})">
+		<div id="app"><!--Main content-->
+   		   <span th:replace="fragments/sidebar :: sidebar"></span>
+    	    <div id="main"><!--Content id-->
+            <span th:replace="fragments/header :: header"></span>
+        		<div class="main-content container-fluid" layout:fragment="content"><!--dynamic content-->
+            		<div class="row">
+ 						<div align=center style="margin-top:8vw">
+ 							<h1 style="color:orange">
+ 								Select Branch for Create Center 
+ 							</h1>
+ 					<div class="d-flex justify-content-center">       <!-- body start -->
+	   					<form th:action="@{/subhlakshmi/createCenter}" method="post" >
+	   					<div class="d-flex gap-2">
+	   						<div>
+								 <select id="branchSelect" name="branch" class="form-select" onchange="updateBranchName()">
+   									 <option value="">--Select a branch--</option>           									     
+								</select>
+								<input type="hidden"  id="branchName" name="branchName">
+							</div>
+							<div>
+								 <input type="submit" value="Submit" class="btn" style="background-color: rgb(254, 147, 1);"/>
+							 </div>
+						</div>
+ 			  
+	 					</form>	
+					</div>         <!--  body end -->
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>              				
+ 					 </div>
+      			</div>
+        		<div style="margin-top:3vw">
+               	<span th:replace="fragments/footer :: footer"></span>
+              	</div>
+    		</div>
+	</div>
+</div>
+<script th:src="@{/js/feather.min.js}"></script>
+<script th:src="@{/js/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/apexcharts.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
