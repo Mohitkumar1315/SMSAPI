@@ -47,7 +47,10 @@ public class SubhSMSController {
                     .header("Authorization", "09de330ad643416380ecadbbff117ebe")
                     .asString();
             if(response.isSuccess()) {
+            	otpStorage.put("existOtp", otp);
+                otpStorage.put("existContact",contactnumber);
             	responsemap.put("status","success");
+            	responsemap.put("contactnumber",contactnumber);
             	System.out.println("OTP:"+otp);
             	responsemap.put("OTP", otp);
             }
@@ -59,18 +62,20 @@ public class SubhSMSController {
         	return responsemap;
         }
     }
-//    @GetMapping("/verify/{contactnumber}/{otp}")
-//    public Map<String, String> verifyOtp(@PathVariable String contactnumber, @PathVariable String otp) {
-//        Map<String, String> result = new HashMap<>();
-//        if (otp.equals(result))) {
-//            otpStorage.remove(contactnumber); // OTP verified, remove it
-//            result.put("status", "success");
-//            result.put("message", "OTP verification successful!");
-//        } else {
-//            result.put("status", "failed");
-//            result.put("message", "Invalid OTP, please try again.");
-//        }
-//        return result;
-//    }
+    @GetMapping("/verify/{contactnumber}/{otp}")
+    public Map<String, String> verifyOtp(@PathVariable String contactnumber, @PathVariable String otp) {
+        Map<String, String> result = new HashMap<>();
+        String contactno=contactnumber;
+        String pOtp=otp;
+        if(contactno.equals(otpStorage.get("existContact"))&&pOtp.equals(otpStorage.get("existOtp")))
+        {
+        	System.out.println("Test if otp match");
+        	result.put("success","200");
+        	result.put("status", "success");
+        }
+        System.out.println("cont  in verification"+contactnumber);
+        System.out.println("otp  in verification"+otpStorage.get("existOtp"));
+        return result;
+    }
 }
 
